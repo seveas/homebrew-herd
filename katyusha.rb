@@ -1,8 +1,8 @@
 class Katyusha < Formula
   desc "Massively parallel SSH client"
   homepage "https://katyusha.seveas.net"
-  url "https://github.com/seveas/katyusha/archive/refs/tags/v0.7.0.tar.gz"
-  sha256 "5d78810b1e91b282dec508cf3ddc63db767fc184721d918c2506f5cf8a34a69f"
+  url "https://github.com/seveas/katyusha/archive/refs/tags/v0.7.1.tar.gz"
+  sha256 "587aa871b8c0e8297de060c2ae24625bf4cbf0e924b5393fa7f1775aed2c6fb4"
   license "MIT"
 
   depends_on "go" => [:build, :test]
