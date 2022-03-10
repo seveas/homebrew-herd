@@ -7,9 +7,6 @@ class Herd < Formula
 
   depends_on "go" => [:build, :test]
 
-  # We need an up-to-date ssh agent
-  depends_on "openssh"
-
   def install
     system "make"
     bin.install "herd"
