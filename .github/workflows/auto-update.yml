@@ -36,14 +36,11 @@ jobs:
           sed -e "s!sha256 \".*\"!sha256 \"$sha256sum\"!" -i herd.rb
 
       - name: File pull request
-        run: |
-         git diff --quiet || {
-            git config --global user.email dennis@kaarsemaker.net
-            git config --global user.name "Dennis Kaarsemaker"
-            git checkout -b new-release-${{ github.event.inputs.tag }}
-            git commit -am "Automated update to ${{ github.event.inputs.tag }}"
-            git push -f origin new-release-${{ github.event.inputs.tag }}
-            gh pr create --title "Automated update to ${{ github.event.inputs.tag }}" --body "Automated update to ${{ github.event.inputs.tag }}"
-         }
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: peter-evans/create-pull-request@v4
+        with:
+          commit-message: Automated update to ${{ github.event.inputs.tag }}
+          title: Automated update to ${{ github.event.inputs.tag }}
+          body: Automated update to ${{ github.event.inputs.tag }}
+          branch: new-release-${{ github.event.inputs.tag }}
+          author: Dennis Kaarsemaker <dennis@kaarsemaker.net>
+          committer: Dennis Kaarsemaker <dennis@kaarsemaker.net>
