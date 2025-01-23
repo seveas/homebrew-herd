@@ -34,6 +34,7 @@ jobs:
           sha256sum=$(sha256sum herd-${{ github.event.inputs.tag }}.tar.gz | cut -f1 -d ' ' )
           sed -e 's![^/]\+.tar.gz!${{ github.event.inputs.tag }}.tar.gz!' -i herd.rb
           sed -e "s!sha256 \".*\"!sha256 \"$sha256sum\"!" -i herd.rb
+          rm *.tar.gz
 
       - name: File pull request
         uses: peter-evans/create-pull-request@v4
