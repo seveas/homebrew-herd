@@ -1,8 +1,8 @@
 class Herd < Formula
   desc "Massively parallel SSH client"
   homepage "https://herd.seveas.net"
-  url "https://github.com/seveas/herd/archive/refs/tags/v0.15.0.tar.gz"
-  sha256 "40668ef8151de22de67868bb576e6f91e5e632f07eec3258121f55553063f16e"
+  url "https://github.com/seveas/herd/archive/refs/tags/v0.15.1.tar.gz"
+  sha256 "d7f33c751bd8f29f0a5973c6c33a4d8a80666c6e51f134920b8d216f0522b794"
   license "MIT"
 
   depends_on "go" => [:build, :test]
